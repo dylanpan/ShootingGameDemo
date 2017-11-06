@@ -11,7 +11,7 @@
 // -----------------------------------------------------------------
 
 #import "AppDelegate.h"
-#import "HelloWorldScene.h"
+#import "GameStartLayer.h"
 
 // -----------------------------------------------------------------------
 
@@ -42,10 +42,13 @@
                                                   @"-2x", CCFileUtilsSuffixiPhone5HD,
                                                   @"", CCFileUtilsSuffixDefault,
                                                   nil];
-
+    
     // Show FPS
     // We really want this when developing an app
     [startUpOptions setObject:@(YES) forKey:CCSetupShowDebugStats];
+    
+    //默认是横屏模式
+    //[startUpOptions setObject:CCScreenOrientationLandscape forKey:CCSetupScreenOrientation];
     
     // A acouple of other examples
     
@@ -63,13 +66,13 @@
     // [startUpOptions setObject:CCScreenModeFixed forKey:CCSetupScreenMode];
     
     // All the supported keys can be found in CCConfiguration.h
-
+    
     // We are done ...
     // Lets get this thing on the road!
     [self setupCocos2dWithOptions:startUpOptions];
-	
+    
     // Stay positive. Always return a YES :)
-	return YES;
+    return YES;
 }
 
 // -----------------------------------------------------------------------
@@ -77,30 +80,12 @@
 
 - (CCScene *)startScene
 {
-	return [HelloWorldScene new];
+    return [GameStartLayer scene];
 }
 
 // -----------------------------------------------------------------------
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

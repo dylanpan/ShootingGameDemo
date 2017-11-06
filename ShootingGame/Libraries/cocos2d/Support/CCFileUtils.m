@@ -344,7 +344,7 @@ static CCFileUtils *fileUtils = nil;
 		// If the file does not exist it will return nil.
 		NSString *filename = [newName lastPathComponent];
 		NSString *imageDirectory = [path stringByDeletingLastPathComponent];
-		
+        
 		// on iOS it is OK to pass inDirector=nil and pass a path in "Resources",
 		// but on OS X it doesn't work.
 		ret = [self pathForResource:filename

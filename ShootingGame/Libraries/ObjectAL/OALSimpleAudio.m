@@ -27,6 +27,8 @@
 // Attribution is not required, but appreciated :)
 //
 
+#import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "OALSimpleAudio.h"
 #import "ObjectALMacros.h"
 #import "ARCSafe_MemMgmt.h"
@@ -704,6 +706,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OALSimpleAudio);
 - (bool) suspended
 {
 	return [OALAudioSession sharedInstance].suspended;
+}
+
+#pragma mark Vibrate
+- (void)vibrate{
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
 

@@ -489,4 +489,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(OALSimpleAudio);
  */
 - (void) resetToDefault;
 
+#pragma mark Vibrate
+
+/** vibrate method
+ */
+- (void) vibrate;
+
 @end

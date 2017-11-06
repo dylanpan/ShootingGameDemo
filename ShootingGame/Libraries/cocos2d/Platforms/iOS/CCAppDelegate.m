@@ -23,6 +23,8 @@
  *
  */
 
+#import "MeunLayer.h"
+
 #import "../../ccMacros.h"
 #if __CC_PLATFORM_IOS
 
@@ -313,6 +315,9 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 {
 	if([CCDirector sharedDirector].animating) {
 		[[CCDirector sharedDirector] stopAnimation];
+        if ([[[CCDirector sharedDirector] runningScene].name isEqualToString:@"GameScene"]) {
+            [[CCDirector sharedDirector] pushScene:[MeunLayer scene]];
+        }
 	}
 }
 
