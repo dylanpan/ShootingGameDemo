@@ -239,6 +239,7 @@
 		DEA1CF1B1F8E77DB007D3936 /* SneakyJoystick+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA1CF1A1F8E77DB007D3936 /* SneakyJoystick+Extension.m */; };
 		DEA1CF211F8E7842007D3936 /* SneakyJoystickSkinnedBase+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA1CF201F8E7842007D3936 /* SneakyJoystickSkinnedBase+Extension.m */; };
 		DEA7153D1F9252E5008A6D67 /* MeunLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA7153C1F9252E5008A6D67 /* MeunLayer.m */; };
+		DEA761E21FB08FB70042F235 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEA761E11FB08FB70042F235 /* DefaultPreferences.plist */; };
 		DEAE70361F936C23000F6946 /* ScoreComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAE70351F936C23000F6946 /* ScoreComponent.m */; };
 		DEAE70391F936C3E000F6946 /* BuffComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAE70381F936C3E000F6946 /* BuffComponent.m */; };
 		DEAE703C1F939320000F6946 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAE703B1F939320000F6946 /* GameOverLayer.m */; };
@@ -860,6 +861,7 @@
 		DEA1CF201F8E7842007D3936 /* SneakyJoystickSkinnedBase+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SneakyJoystickSkinnedBase+Extension.m"; sourceTree = "<group>"; };
 		DEA7153B1F9252E5008A6D67 /* MeunLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeunLayer.h; sourceTree = "<group>"; };
 		DEA7153C1F9252E5008A6D67 /* MeunLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeunLayer.m; sourceTree = "<group>"; };
+		DEA761E11FB08FB70042F235 /* DefaultPreferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DefaultPreferences.plist; path = Resources/DefaultPreferences.plist; sourceTree = "<group>"; };
 		DEAE70341F936C23000F6946 /* ScoreComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreComponent.h; sourceTree = "<group>"; };
 		DEAE70351F936C23000F6946 /* ScoreComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreComponent.m; sourceTree = "<group>"; };
 		DEAE70371F936C3E000F6946 /* BuffComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuffComponent.h; sourceTree = "<group>"; };
@@ -1126,6 +1128,7 @@
 				DED5A87A1FAD784000A26B9E /* shoot.caf */,
 				DEBF07A71FAF06CE00E410E6 /* missile.caf */,
 				DED5A8791FAD784000A26B9E /* ShootingStarOfField.mp3 */,
+				DEA761E11FB08FB70042F235 /* DefaultPreferences.plist */,
 				DE8848841F8DEF1F00501CCF /* Default.png */,
 				DE8848861F8DEF1F00501CCF /* Default@2x.png */,
 				DE8848881F8DEF1F00501CCF /* Default-568h@2x.png */,
@@ -2206,6 +2209,7 @@
 				DEF332D31FAC1A3E00F91467 /* button-default1.png in Resources */,
 				DE8848A91F8DEF1F00501CCF /* iTunesArtwork in Resources */,
 				DEB06D0E1FA9FFC100F81D1A /* ship-default-anim4.png in Resources */,
+				DEA761E21FB08FB70042F235 /* DefaultPreferences.plist in Resources */,
 				DEB06D1B1FA9FFC100F81D1A /* start-anim5.png in Resources */,
 				DEB06D1D1FA9FFC100F81D1A /* start-anim7.png in Resources */,
 				DEF332D41FAC1A3E00F91467 /* button-disabled1.png in Resources */,

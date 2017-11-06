@@ -27,6 +27,7 @@
 @property (nonatomic, strong) CCLabelTTF *gameSettingButton;
 @property (nonatomic, strong) CCLabelTTF *gameCreditsButton;
 @property (nonatomic) CGSize screenSize;
+@property (nonatomic) BOOL *isBackgroundMusicOn;
 
 // -----------------------------------------------------------------
 // methods

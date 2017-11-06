@@ -65,12 +65,11 @@
         _gameCreditsButton = [self addGameStartButtonWithName:@"Credits" positionY:_screenSize.height * 0.35f fontSize:20];
         
         //添加背景音乐
-        BOOL *isBackgroundMusicOn = [[OALSimpleAudio sharedInstance] playBg:@"ShootingStarOfField.mp3" loop:YES];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setBool:isBackgroundMusicOn forKey:@"isBackgroundMusicOn"];
-        [defaults setBool:@(YES) forKey:@"isEffectOn"];
-        [defaults setBool:@(YES) forKey:@"isShakeOn"];
-        [defaults synchronize];
+        _isBackgroundMusicOn = [defaults boolForKey:@"isBackgroundMusicOn"];
+        if (_isBackgroundMusicOn) {
+            [[OALSimpleAudio sharedInstance] playBg:@"ShootingStarOfField.mp3" loop:YES];
+        }
     }
     return self;
 }
@@ -104,6 +103,7 @@
 - (CCLabelTTF *)addGameStartButtonWithName:(NSString *)buttonName positionY:(CGFloat)posY fontSize:(NSInteger)fontSize{
     CCLabelTTF *labelButton = [CCLabelTTF labelWithString:buttonName fontName:@"ArialMT" fontSize:fontSize];
     labelButton.position = CGPointMake(-labelButton.contentSize.width * 0.5f, posY);
+    //labelButton.position = CGPointMake(_screenSize.width * 0.5f, posY);
     labelButton.color = [CCColor whiteColor];
     [self addChild:labelButton z:0];
     return labelButton;
@@ -140,14 +140,14 @@
 }
 
 - (void)update:(CCTime)delta{
-    NSInteger planePosX = (NSInteger)_gameStartPlaneSprite.position.x;
-    NSInteger actionPosX = (NSInteger)_screenSize.width * 0.2f;
-    if (planePosX == actionPosX) {
-        //button添加action
-        [_gameStartButton runAction:[self addMoveActionToButtonWithDuration:0.8f PositionY:_gameStartButton.position.y]];
-        [_gameSettingButton runAction:[self addMoveActionToButtonWithDuration:1.0f PositionY:_gameSettingButton.position.y]];
-        [_gameCreditsButton runAction:[self addMoveActionToButtonWithDuration:1.2f PositionY:_gameCreditsButton.position.y]];
-    }
+        NSInteger planePosX = (NSInteger)_gameStartPlaneSprite.position.x;
+        NSInteger actionPosX = (NSInteger)_screenSize.width * 0.2f;
+        if (planePosX == actionPosX) {
+            //button添加action
+            [_gameStartButton runAction:[self addMoveActionToButtonWithDuration:0.8f PositionY:_gameStartButton.position.y]];
+            [_gameSettingButton runAction:[self addMoveActionToButtonWithDuration:1.0f PositionY:_gameSettingButton.position.y]];
+            [_gameCreditsButton runAction:[self addMoveActionToButtonWithDuration:1.2f PositionY:_gameCreditsButton.position.y]];
+        }
 }
 
 // -----------------------------------------------------------------

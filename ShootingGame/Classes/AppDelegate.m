@@ -50,6 +50,11 @@
     //默认是横屏模式
     //[startUpOptions setObject:CCScreenOrientationLandscape forKey:CCSetupScreenOrientation];
     
+    //添加默认设置
+    NSURL *defaultPrefsFile = [[NSBundle mainBundle] URLForResource:@"DefaultPreferences" withExtension:@"plist"];
+    NSDictionary *defaultPrefs = [NSDictionary dictionaryWithContentsOfURL:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    
     // A acouple of other examples
     
     // Use a 16 bit color buffer

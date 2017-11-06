@@ -136,7 +136,8 @@ static BOOL isShakeOn;
             [self backgroundMusicSwitchStore];
         }else{
             [self changeSpriteFrame:_musicButton Name:@"music.png"];
-            [[OALSimpleAudio sharedInstance] setBgPaused:NO];
+            //[[OALSimpleAudio sharedInstance] setBgPaused:NO];
+            [[OALSimpleAudio sharedInstance] playBg:@"ShootingStarOfField.mp3" loop:YES];
             isBackgroundMusicOn = YES;
             [self backgroundMusicSwitchStore];
         }
@@ -155,12 +156,10 @@ static BOOL isShakeOn;
     }else if (CGRectContainsPoint(shakeRect, touchLocation)) {
         if (isShakeOn) {
             [self changeSpriteFrame:_shakeButton Name:@"shake-disable.png"];
-            
             isShakeOn = NO;
             [self shakeSwitchStore];
         }else{
             [self changeSpriteFrame:_shakeButton Name:@"shake.png"];
-            
             isShakeOn = YES;
             [self shakeSwitchStore];
         }

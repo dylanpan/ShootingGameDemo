@@ -315,6 +315,7 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 {
 	if([CCDirector sharedDirector].animating) {
 		[[CCDirector sharedDirector] stopAnimation];
+        //游戏中app退到后台，再次打开显示暂停页面
         if ([[[CCDirector sharedDirector] runningScene].name isEqualToString:@"GameScene"]) {
             [[CCDirector sharedDirector] pushScene:[MeunLayer scene]];
         }

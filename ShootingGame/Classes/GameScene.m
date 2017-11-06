@@ -152,32 +152,36 @@ static GameScene *instanceOfGameScene;
 }
 
 - (void)shakeGameSceneWithEnemyType:(EnemyTypes)type{
-    CGPoint diffTop;
-    CGPoint diffBottom;
-    CGPoint diffLeft;
-    CGPoint diffRight;
-    CGPoint diffCenter;
-    if (type == EnemyTypeBoss) {
-        diffTop = CGPointMake(0.0f, 0.05f);
-        diffBottom = CGPointMake(0.0f, -0.05f);
-        diffLeft = CGPointMake(-0.05f, 0.0f);
-        diffRight = CGPointMake(0.05f, 0.0f);
-        diffCenter = CGPointMake(0.0f, 0.0f);
-    }else{
-        diffTop = CGPointMake(0.0f, 1.0f);
-        diffBottom = CGPointMake(0.0f, -1.0f);
-        diffLeft = CGPointMake(-1.0f, 0.0f);
-        diffRight = CGPointMake(1.0f, 0.0f);
-        diffCenter = CGPointMake(0.0f, 0.0f);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL *isShakeOn = [defaults boolForKey:@"isShakeOn"];
+    if (isShakeOn) {
+        CGPoint diffTop;
+        CGPoint diffBottom;
+        CGPoint diffLeft;
+        CGPoint diffRight;
+        CGPoint diffCenter;
+        if (type == EnemyTypeBoss) {
+            diffTop = CGPointMake(0.0f, 0.05f);
+            diffBottom = CGPointMake(0.0f, -0.05f);
+            diffLeft = CGPointMake(-0.05f, 0.0f);
+            diffRight = CGPointMake(0.05f, 0.0f);
+            diffCenter = CGPointMake(0.0f, 0.0f);
+        }else{
+            diffTop = CGPointMake(0.0f, 1.0f);
+            diffBottom = CGPointMake(0.0f, -1.0f);
+            diffLeft = CGPointMake(-1.0f, 0.0f);
+            diffRight = CGPointMake(1.0f, 0.0f);
+            diffCenter = CGPointMake(0.0f, 0.0f);
+        }
+        CGFloat duration = 0.03f;
+        CCActionMoveTo *sceneMoveTop = [CCActionMoveTo actionWithDuration:duration position:diffTop];
+        CCActionMoveTo *sceneMovebottom = [CCActionMoveTo actionWithDuration:duration position:diffBottom];
+        CCActionMoveTo *sceneMoveLeft = [CCActionMoveTo actionWithDuration:duration position:diffLeft];
+        CCActionMoveTo *sceneMoveRight = [CCActionMoveTo actionWithDuration:duration position:diffRight];
+        CCActionMoveTo *sceneMoveCenter = [CCActionMoveTo actionWithDuration:duration position:diffCenter];
+        CCActionSequence *actionSequence = [CCActionSequence actions:sceneMoveTop, sceneMoveRight, sceneMovebottom, sceneMoveLeft, sceneMoveCenter, nil];
+        [self runAction:actionSequence];
     }
-    CGFloat duration = 0.03f;
-    CCActionMoveTo *sceneMoveTop = [CCActionMoveTo actionWithDuration:duration position:diffTop];
-    CCActionMoveTo *sceneMovebottom = [CCActionMoveTo actionWithDuration:duration position:diffBottom];
-    CCActionMoveTo *sceneMoveLeft = [CCActionMoveTo actionWithDuration:duration position:diffLeft];
-    CCActionMoveTo *sceneMoveRight = [CCActionMoveTo actionWithDuration:duration position:diffRight];
-    CCActionMoveTo *sceneMoveCenter = [CCActionMoveTo actionWithDuration:duration position:diffCenter];
-    CCActionSequence *actionSequence = [CCActionSequence actions:sceneMoveTop, sceneMoveRight, sceneMovebottom, sceneMoveLeft, sceneMoveCenter, nil];
-    [self runAction:actionSequence];
 }
 
 
